@@ -1,0 +1,5 @@
+package com.adacho.controller;
+
+public class HelloController {
+
+}

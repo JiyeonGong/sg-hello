@@ -1,0 +1,18 @@
+services:
+  spring-board:
+    build: ./jpa-board-1
+    image: whoismiki/board:1.0
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/jpa_db?allowPublicKeyRetrieval=true&useSSL=false&characterEncoding=UTF-8&serverTimezone=Asia/Seoul&allowMultiQueries=true
+      SPRING_DATASOURCE_USERNAME: lastcoder
+      SPRING_DATASOURCE_PASSWORD: 1234
+      
+    networks:
+      - board-net
+      
+networks:
+  board-net:
+    external: true
+
